@@ -1,26 +1,23 @@
-import { useFormData } from "../../hooks/useFormData";
-import { FormFieldType } from "../../utils/types";
-import classes from "./DynamicForm.module.css";
-
-// type DynamicFormPropsType = {
-//     fieldsConfig: Array<FormFieldSectionType>;
-// };
+import { useReducer } from 'react';
+import { FormFieldType } from '../../utils/types';
+import classes from './DynamicForm.module.css';
+import { formReducer, formInitialState } from '../../reducers/FormReducer';
 
 type DynamicFormSectionFieldsPropsType = {
     fields: Array<FormFieldType>;
 };
 
 const DynamicForm = () => {
-    const { formState } = useFormData();
+    const [formState, dispatch] = useReducer(formReducer, formInitialState);
 
     return (
-        <form className={classes.form_container} action={"submit"}>
-            {formState.map((field) => (
-                <section className={classes.form_section}>
+        <form className={classes.form_container} action={'submit'}>
+            {formState.map((section) => (
+                <section key={section.id} className={classes.form_section}>
                     <h2 className={classes.form_section__title}>
-                        {field.sectionLabel}
+                        {section.sectionLabel}
                     </h2>
-                    <DynamicFormSectionFields fields={field.fields} />
+                    <DynamicFormSectionFields fields={section.fields} />
                 </section>
             ))}
         </form>
@@ -33,7 +30,7 @@ const DynamicFormSectionFields = ({
     return (
         <div className={classes.form_fields__container}>
             {fields.map((field) => (
-                <div className={classes.form_field__wrapper}>
+                <div key={field.id} className={classes.form_field__wrapper}>
                     <label htmlFor={field.name}>{field.label}</label>
                     {field.asTextarea ? (
                         <textarea rows={3} />

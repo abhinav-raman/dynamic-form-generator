@@ -1,11 +1,13 @@
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute } from 'react';
 
 export type FormFieldSectionType = {
+    id: string;
     sectionLabel: string;
-    fields: Array<FormFieldType>
-}
+    fields: Array<FormFieldType>;
+};
 export type FormFieldType = React.InputHTMLAttributes<HTMLInputElement> & {
-    label: string
-    type: HTMLInputTypeAttribute
-    asTextarea?: boolean
-}
+    id: string;
+    label: string;
+    type: HTMLInputTypeAttribute;
+    asTextarea?: boolean;
+};
