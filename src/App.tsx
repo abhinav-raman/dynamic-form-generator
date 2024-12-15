@@ -12,7 +12,7 @@ function App() {
     }
 
     return (
-        <main className="container">
+        <main className="flex items-stretch w-full min-h-screen p-8 box-border gap-8">
             <DynamicForm form={formState} />
             <FieldsJsonInput
                 form={formState}

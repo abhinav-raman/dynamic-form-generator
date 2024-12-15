@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { FormFieldSectionType, FormFieldType } from '../../utils/types';
-import classes from './DynamicForm.module.css';
 import Card from '../Card/Card';
 
 type DynamicFormSectionFieldsPropsType = {
@@ -9,11 +8,11 @@ type DynamicFormSectionFieldsPropsType = {
 
 const DynamicForm = ({ form }: { form: FormFieldSectionType[] }) => {
     return (
-        <form className={classes.form_container} action={'submit'}>
+        <form className="w-1/2 flex flex-col p-0">
             <Card>
                 {form.map((section) => (
-                    <section key={section.id} className={classes.form_section}>
-                        <h2 className={classes.form_section__title}>
+                    <section key={section.id} className="flex flex-col">
+                        <h2 className="text-black text-xl font-medium mb-4">
                             {section.sectionLabel}
                         </h2>
                         <DynamicFormSectionFields fields={section.fields} />
@@ -28,10 +27,15 @@ const DynamicFormSectionFields = ({
     fields,
 }: DynamicFormSectionFieldsPropsType) => {
     return (
-        <div className={classes.form_fields__container}>
+        <div className="flex flex-col">
             {fields.map((field) => (
-                <div key={field.id} className={classes.form_field__wrapper}>
-                    <label htmlFor={field.name}>{field.label}</label>
+                <div key={field.id} className="flex flex-col mb-2">
+                    <label
+                        htmlFor={field.name}
+                        className="font-medium text-gray-800 mb-1"
+                    >
+                        {field.label}
+                    </label>
                     <FormField fieldConfig={field} />
                 </div>
             ))}
@@ -43,11 +47,21 @@ const FormField = ({ fieldConfig }: { fieldConfig: FormFieldType }) => {
     const field: JSX.Element = useMemo(() => {
         switch (fieldConfig.type) {
             case 'textarea': {
-                return <textarea rows={3} />;
+                return (
+                    <textarea
+                        rows={3}
+                        className="p-2.5 border rounded-lg border-gray-300 focus:outline-blue-500 resize-vertical max-h-[200px] min-h-[40px]"
+                    />
+                );
             }
 
             default: {
-                return <input {...fieldConfig} />;
+                return (
+                    <input
+                        {...fieldConfig}
+                        className="p-2.5 border rounded-lg border-gray-300 focus:outline-blue-500"
+                    />
+                );
             }
         }
     }, [fieldConfig]);
