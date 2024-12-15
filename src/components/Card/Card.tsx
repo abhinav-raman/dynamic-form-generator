@@ -1,8 +1,11 @@
 import { ReactNode } from 'react';
 
-const Card = ({ children }: { children: ReactNode }) => {
+const Card = ({ children }: { children?: ReactNode }) => {
     return (
-        <div className="w-full grow rounded-theme bg-neutral-100 p-4 box-border">
+        <div
+            data-testid="card-container"
+            className="w-full grow rounded-theme bg-neutral-100 p-4 box-border"
+        >
             {children}
         </div>
     );

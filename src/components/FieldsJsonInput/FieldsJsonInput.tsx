@@ -47,12 +47,14 @@ const FieldsJsonInput = ({
                 <button
                     className="px-4 py-2 text-lg font-semibold bg-green-100 text-green-600 border border-green-600 rounded-md hover:bg-green-200 active:bg-green-300 transition-all"
                     onClick={handleSubmit}
+                    data-testid="form-submit-btn"
                 >
                     Submit
                 </button>
                 <button
                     className="px-4 py-2 text-lg font-semibold bg-red-100 text-red-600 border border-red-600 rounded-md hover:bg-red-200 active:bg-red-300 transition-all"
                     onClick={handleReset}
+                    data-testid="form-reset-btn"
                 >
                     Reset
                 </button>

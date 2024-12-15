@@ -6,6 +6,7 @@ export type FormFieldSectionType = {
     fields: Array<FormFieldType>;
 };
 export type FormFieldType = React.InputHTMLAttributes<HTMLInputElement> & {
+    "data-testid"?: string;
     id: string;
     label: string;
     type: HTMLInputTypeAttribute;

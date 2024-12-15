@@ -50,6 +50,7 @@ const FormField = ({ fieldConfig }: { fieldConfig: FormFieldType }) => {
                 return (
                     <textarea
                         rows={3}
+                        data-testid={fieldConfig['data-testid']}
                         className="p-2.5 border rounded-lg border-gray-300 focus:outline-blue-500 resize-vertical max-h-[200px] min-h-[40px]"
                     />
                 );
@@ -59,6 +60,7 @@ const FormField = ({ fieldConfig }: { fieldConfig: FormFieldType }) => {
                 return (
                     <input
                         {...fieldConfig}
+                        id={fieldConfig.name}
                         className="p-2.5 border rounded-lg border-gray-300 focus:outline-blue-500"
                     />
                 );
