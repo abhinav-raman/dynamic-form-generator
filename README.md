@@ -2,6 +2,13 @@
 
 This is a React + Typescript + TailwindCSS project.
 
+Clone reposity
+
+```bash
+git clone https://github.com/abhinav-raman/dynamic-form-generator.git
+cd dynamic-form-generator
+```
+
 Local setup:
 
 ```bash
