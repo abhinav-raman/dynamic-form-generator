@@ -8,7 +8,7 @@ type DynamicFormSectionFieldsPropsType = {
 
 const DynamicForm = ({ form }: { form: FormFieldSectionType[] }) => {
     return (
-        <form className="w-1/2 flex flex-col p-0">
+        <form className="w-full rounded-lg sm:rounded-theme h-[calc(48vh)] overflow-y-scroll sm:h-auto sm:w-1/2 flex flex-col p-0">
             <Card>
                 {form.map((section) => (
                     <section key={section.id} className="flex flex-col">

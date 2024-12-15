@@ -12,7 +12,7 @@ function App() {
     }
 
     return (
-        <main className="flex items-stretch w-full min-h-screen p-8 box-border gap-8">
+        <main className="flex flex-col p-2 sm:flex-row items-stretch w-full min-h-screen sm:p-8 box-border gap-2 sm:gap-8">
             <DynamicForm form={formState} />
             <FieldsJsonInput
                 form={formState}
