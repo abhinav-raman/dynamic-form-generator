@@ -1,17 +1,9 @@
-:root {
-    font-family: sans-serif;
-    font-weight: 400;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-}
-
 .form_container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
     padding: 8px;
+    padding: 0;
 }
 
 .form_section {
@@ -43,8 +35,13 @@
 .form_field__wrapper input,
 .form_field__wrapper textarea {
     padding: 0.6rem 1rem;
-    border-radius: 0.4rem;
-    border: 2px solid #77777760;
+    border-radius: 0.6rem;
+    border: 1px solid #77777760;
+}
+
+.form_field__wrapper input:focus,
+.form_field__wrapper textarea:focus {
+    outline: 1px solid blue;
 }
 
 .form_field__wrapper textarea {

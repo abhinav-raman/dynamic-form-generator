@@ -45,9 +45,8 @@ export const FORM_STATE: Array<FormFieldSectionType> = [
             {
                 id: getRandomId(),
                 label: 'Address',
-                type: 'text',
+                type: 'textarea',
                 placeholder: 'Enter you address...',
-                asTextarea: true,
             },
             {
                 id: getRandomId(),

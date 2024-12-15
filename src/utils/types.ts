@@ -9,5 +9,4 @@ export type FormFieldType = React.InputHTMLAttributes<HTMLInputElement> & {
     id: string;
     label: string;
     type: HTMLInputTypeAttribute;
-    asTextarea?: boolean;
 };

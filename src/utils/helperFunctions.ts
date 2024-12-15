@@ -1,3 +1,3 @@
 export function getRandomId() {
-    return String((Math.random() * 10) ^ 6);
+    return String(Math.random());
 }

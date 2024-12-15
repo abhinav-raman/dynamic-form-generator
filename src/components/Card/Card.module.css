@@ -1,0 +1,8 @@
+.container {
+    width: 100%;
+    flex-grow: 1;
+    border-radius: 2rem;
+    background: #cccccc40;
+    padding: 1rem;
+    box-sizing: border-box;
+}
