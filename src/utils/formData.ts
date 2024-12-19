@@ -13,6 +13,13 @@ export const FORM_STATE: Array<FormFieldSectionType> = [
                 type: 'text',
                 placeholder: 'Enter you full name...',
             },
+            // {
+            //     id: getRandomId(),
+            //     label: 'Full Name',
+            //     name: 'full-name',
+            //     type: 'text',
+            //     placeholder: 'Enter you full name...',
+            // },
             {
                 id: getRandomId(),
                 label: 'Phone Number',
@@ -44,12 +51,14 @@ export const FORM_STATE: Array<FormFieldSectionType> = [
         fields: [
             {
                 id: getRandomId(),
+                name: "address",
                 label: 'Address',
                 type: 'textarea',
                 placeholder: 'Enter you address...',
             },
             {
                 id: getRandomId(),
+                name: "pincode",
                 label: 'Pincode',
                 type: 'tel',
                 placeholder: 'Enter pincode...',
